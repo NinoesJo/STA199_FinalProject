@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Hate Crime Occurrences in 2013</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">team-six</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./proposal.html" rel="" target="">
+ <span class="menu-text">Proposal</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./presentation.pdf" rel="" target="">
+ <span class="menu-text">Presentation</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./report.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Report</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction-and-data" id="toc-introduction-and-data" class="nav-link active" data-scroll-target="#introduction-and-data">Introduction and Data</a></li>
+  <li><a href="#literature-review" id="toc-literature-review" class="nav-link" data-scroll-target="#literature-review">Literature Review</a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Hate Crime Occurrences in 2013</h1>
+<p class="subtitle lead">Analysis of FBI Data</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="introduction-and-data" class="level3">
+<h3 class="anchored" data-anchor-id="introduction-and-data">Introduction and Data</h3>
+<p>For our research question, we would like to know where hate crimes occur more frequently: in states that voted democrat for the 2012 election, or in republican states? Additionally, we would like to know which hate crime category experienced the most crimes.</p>
+<p>This question is important because it can potentially be used to compare to analyses of more recent data and identify risk factors for hate crime occurrences, which can then inform policy decisions. In an ethnically, racially, religiously and sexually diverse nation, hate crimes are one of the many substantial barriers to our functioning as a safe and accepting society. 2013 was a year in which the political climate of the United States was less accepting of diverse identities compared to how it is now. Specifically, 2013 was pre- legalization of same sex marriage and the beginning of the Black Lives Matter movement. We hypothesize, due to the political climate at the time, that the data will show a positive relationship between hate crimes and states with republican politics. Furthermore, we predict that there will be a higher number of hate crime occurrences motivated by sexual orientation and race than in other categories.</p>
+<p>Our dataset was aggregated from the FBI Hate Crimes Report for 2013. The data was collected in 2016 by accessing statistics across states from the FBI Hate Crimes Report website, which is open access (<a href="https://www.fbi.gov/about-us/cjis/ucr/hate-crime/2013" class="uri">https://www.fbi.gov/about-us/cjis/ucr/hate-crime/2013</a>). The dataset contains two csv files with a table detailing agencies that reported incidences of hate crimes in 2013 and another for those that reported no incidences of hate crimes in 2013. These tables contain 1827 and 12827 observations, respectively.</p>
+<p>Each row of our dataset represents an area within a state, and hate crime reports per minority category are counted within each area. We will utilize the variable state as a location identifier and group by state, omitting specific cities and counties. We will then group these states into “Republican” and “Democrat” based on which way the state voted in the 2012 election. We will also utilize the columns for Race, Religion, Sexual Orientation, Ethnicity, Disability, Gender, and Gender Identity, which will be categories for our minority category variable. State and minority category each act as categorical variables here, while number of hate crimes is quantitative.</p>
+<p>There are a few ethical concerns with this data. Perhaps most prominent, as the literature review later mentions, the incidents in this report are only those that law enforcement has determined meets the criteria for a hate crime. This means, if such criteria is especially constrictive, the dataset may be underreporting the true frequency of hate crimes.</p>
+</section>
+<section id="literature-review" class="level3">
+<h3 class="anchored" data-anchor-id="literature-review">Literature Review</h3>
+<p>Among the literature we found, a paper published by Cheng et al.&nbsp;used FBI data to examine hate crimes in the U.S. between the years 1996 and 2008 <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Rather than utilizing the raw numbers, they calculated a statistic for how many hate crimes occurred per 10 million victims/offenders within each minority category. Then, they performed various statistical analyses to determine risk factors for hate crime victimization, as a well as risk factors for hate crime offending. They found that White and Black offenders are more likely to target out-groups, while American Indigenous Alaskan Natives and Asians are more likely to target in-groups. They also found significant rates of anti-religious hate crimes, both towards Jewish and Muslim people, and anti-homosexual hate crimes.</p>
+<p>Our data set is aggregated from the same source as the study mentioned above, but ours is from the year 2013. We are interested to see how our results compare to a less recent analysis. Additionally, we are interested in how state politics influence hate crime frequency rather than population, which is something not addressed by this study.</p>
+</section>
+<section id="methodology" class="level3">
+<h3 class="anchored" data-anchor-id="methodology">Methodology</h3>
+<p><strong>Pivoting/Tidying Data</strong></p>
+<p>We are selecting only the relevant variables from the existing data set. Then, we pivoted the data longer to include different hate crime categories along with the number of hate crimes in that specific category and state/region.</p>
+<p><strong>Hate Crimes by Category</strong></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7 × 2
+  Category           Total_Crime_Category
+  &lt;chr&gt;                             &lt;dbl&gt;
+1 Disability                           83
+2 Ethnicity                           655
+3 Gender                               18
+4 Gender Identity                      31
+5 Race                               2872
+6 Religion                           1032
+7 Sexual orientation                 1237</code></pre>
+</div>
+</div>
+<p><strong>Bar Graph of Hate Crime by Category</strong></p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="report_files/figure-html/Bar Graph-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>We are creating a tibble and a bar graph to demonstrate which hate crime category experienced the most crimes in 2013. With the tibble, it gave us the quantitative data of each hate crime category and the bar graph visualizes the quantitative data.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7 × 5
+  term                       estimate std.error statistic  p.value
+  &lt;chr&gt;                         &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+1 (Intercept)                  0.0455    0.0595     0.764 4.45e- 1
+2 CategoryEthnicity            0.313     0.0841     3.72  1.97e- 4
+3 CategoryGender              -0.0356    0.0842    -0.423 6.72e- 1
+4 CategoryGender Identity     -0.0285    0.0841    -0.338 7.35e- 1
+5 CategoryRace                 1.53      0.0841    18.2   9.19e-73
+6 CategoryReligion             0.520     0.0841     6.18  6.67e-10
+7 CategorySexual orientation   0.632     0.0841     7.51  6.16e-14</code></pre>
+</div>
+</div>
+<p>Each of the categorical predictors for minority group are grouped into a single piecewise function called category for simplicity purposes.</p>
+<p><span class="math display">\[
+\widehat{Number\ of\ Hate\ Crimes} = 0.05 + 0.32 * Ethnicity - 0.04 * Gender - 0.03 * Gender\ Identity
+\]</span></p>
+<p><span class="math display">\[
++ 1.53 * Race + 0.52 * Religion + 0.63 * Sexual\ Orientation
+\]</span></p>
+<p><span class="math display">\[
+  Category =
+    \begin{cases}
+      1 &amp; \text{if Category is used}\\
+      0 &amp; \text{otherwise}
+    \end{cases}
+\]</span></p>
+<p><strong>Pivoting/Tidying Data</strong></p>
+<p><strong>Hate Crime Per State</strong></p>
+<p>Here, we are summing the totals for the hate crimes reported in each state and assigning it to a new data set called hate_crime_state.</p>
+<p><strong>Adding Political Party Based on 2012 Election Data</strong></p>
+<p>Here, we pivoted our data set to account for the political affiliation of every state in the U.S. Hawaii is ommitted because it had no observations.</p>
+<p><strong>Mean number of Hate Crime for Democratic vs.&nbsp;Republican States</strong></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  party       mean
+  &lt;chr&gt;      &lt;dbl&gt;
+1 Democrat   129. 
+2 Republican  73.1</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="report_files/figure-html/boxplot for outliers-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 3
+  State         hate_crime_total party     
+  &lt;chr&gt;                    &lt;dbl&gt; &lt;chr&gt;     
+1 California                 699 Democrat  
+2 New_York                   443 Republican
+3 New_Jersey                 404 Republican
+4 Massachusetts              350 Democrat  
+5 Ohio                       322 Democrat  </code></pre>
+</div>
+</div>
+<p>This is a boxplot of the total hate crimes in each state sorted by political party based on the 2012 voting outcome. This allows us to visualize the difference in hate crime frequency in relation to state political party. We also created a tibble to show which states the outliers in our boxplot correspond to.</p>
+<p>Hypothesis Test:</p>
+<p><span class="math inline">\(H_o: \mu_{democrat} - \mu_{republican} = 0\)</span></p>
+<p><span class="math inline">\(H_a: \mu_{democrat} - \mu_{republican} \neq 0\)</span></p>
+<p><strong>Hypothesis Testing Results</strong></p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="report_files/figure-html/hypothesis_test-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  p_value
+    &lt;dbl&gt;
+1   0.144</code></pre>
+</div>
+</div>
+<p>This is a histogram of the results of our hypothesis testing with our observed statistics graphed at both sides of the bell curve, as our alternative hypothesis is two-sided. The hypothesis test resulted in a p-value of .144.</p>
+<p><strong>Confidence Interval Results</strong></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  lower upper
+  &lt;dbl&gt; &lt;dbl&gt;
+1 -138.  18.3</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="report_files/figure-html/graph of confidence interval-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>This is a graph for a confidence interval for the difference in mean hate crime between the two political parties. Our 95% confidence interval shows the difference in mean hate crime for the two parties lies between (-138, 18.3).</p>
+<p>The visualizations and statistics above show generally that hate crimes motivated by sexual orientation and race are the most common. Furthermore, the mean suggests that hate crime occurs more frequently in Democratic states, but hypothesis testing suggests this may not be statistically significant.</p>
+</section>
+<section id="results" class="level3">
+<h3 class="anchored" data-anchor-id="results">Results</h3>
+<p><strong>Category Analysis:</strong></p>
+<p>The bar graph and quantitative data for minority categories revealed that Race and Sexual Orientation were the most prevalent motivations of hate crimes in 2013. Religion followed closely behind. Categories such as Disability, Ethnicity, Gender, and Gender Identity reported fewer incidents, as shown by their lower positioning on the plot. Our inference testing indicates a positive relationship between hate crime frequency and the levels of minority category Race and Sexual Orientation. Overall, our analysis provided support that there is a relationship between minority category and hate crime frequency, and may suggest that race and sexual orientation were significant risk factors of hate crime victimization in 2013.</p>
+<p><strong>Political Affiliation Analysis:</strong></p>
+<p>Upon categorizing states by political affiliation, we calculated the mean number of hate crimes per state for both Democratic and Republican majorities. The mean for states with Democratic politics was higher than that of Republican states. However, our hypothesis testing resulted in a p-value of 0.144. This p-value exceeds the conventional threshold of 0.05 for statistical significance, indicating that there is no substantial evidence to reject the null hypothesis that hate crime frequency is independent of state politics.</p>
+<p><strong>Conclusions:</strong></p>
+<p>The data analysis and visualization suggests a positive relationship between minority category and hate crime frequency. However, the analysis does not support a statistically significant relationship between the political affiliation of a state in 2012 and the average number of hate crimes in that state 2013. We cannot reject the null hypothesis that hate crime frequency is independent of state politics.</p>
+<p>Going forward, we suggest merging this data with more recent data to consider how hate crime risk factors have changed over the years. Determining which groups and geographic areas are more at risk can help inform protective policy implementation. Furthermore, expanding data on hate crime to include not only victims but also offender demographics could open the possibilities to determining risk factors for hate crime offending.</p>
+<p>Hate crimes are an ongoing issue in our country, and research like this is necessary for protecting at-risk communities.</p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Cheng, W., Ickes, W. &amp; Kenworthy, J.B. (2013). Hate crimes. <em>Journal of Applied Social Psychology</em>, <em>43</em>(4), 761-794. https://doi.org/10.1111/jasp.12004<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

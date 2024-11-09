@@ -1,0 +1,12 @@
+---
+title: "About"
+format: html
+editor: visual
+---
+
+This project was developed by **\[team name\]** For [STA 199: Introduction to Data Science](https://sta199-f23-1.github.io/) at Duke University. The team is comprised of the following team members.
+
+-   Team member 1: I am Johan Nino Espino, I am a feshman at Duke and I am planning on majoring in computer science.
+-   Team member 2: I am Ryan Copeland, a junior majoring in psychology and minoring in Korean.
+-   Team member 3: I am Caleb Kiprono, a junior majoring in computer science
+-   Team member 4: I am Kevin Zheng, a freshman majoring in computer science

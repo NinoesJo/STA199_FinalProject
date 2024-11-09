@@ -1,0 +1,8 @@
+---
+title: "team-six"
+subtitle: "STA 199 Project"
+format: html
+editor: visual
+---
+
+Our project examines a data set compiling hate crimes reported by the FBI in 2013. This year is of particular interest because of the significance of the political climate -- shortly after President Obama's re-election, and pre- legalization of same sex marriage and pre- Black Lives Matter movement. Through our statistical analyses, we aim to observe the relationship between two independent predictor variables (state political affiliation and victims' minority category) and a response variable quantity of hate crimes.
